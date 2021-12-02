@@ -2,57 +2,88 @@
   display: grid;
 }
 
-.align-self-item {
+.ordering-grid {
   grid-template: repeat(3, 100px) / 1fr 1fr;
-  align-items: start;
-  justify-items: center;
+}
+.ordering-grid div:nth-child(1) {
+  order: 2;
+  grid-column: 1 / span 2;
 }
 
-.align-self-item div:nth-child(even) {
-  align-self: stretch;
-  justify-self: stretch;
+.ordering-grid div:nth-child(2) {
+  order: 1;
 }
 
-.align-self-item div:nth-child(1) {
-  justify-self: start;
-  align-self: center;
+.ordering-grid div:nth-child(3) {
+  order: 0;
 }
 
-.align-self-item div:nth-child(3) {
-  justify-self: end;
-  align-self: center;
+.ordering-grid div:nth-child(4) {
+  order: -1;
 }
 
-.align-self-item div:nth-child(5) {
-  justify-self: start;
-  align-self: center;
+.ordering-grid div:nth-child(5) {
+  order: -2;
 }
 
-.place-item-grid {
-  grid-template: 150px 150px 150px/1fr 1fr;
-  /* align-items: center;
-  justify-items: start; */
-  place-items: center start;
+.ordering-grid div:nth-child(6) {
+  order: -3;
+  grid-column: 1 / span 2;
 }
 
-.place-content-grid {
-  height: 400px;
-  grid-template: 100px 100px 100px/100px 100px;
-  /* align-content: space-between;
-  justify-content: space-around; */
-  place-content: space-between space-around;
+.position-grid {
+  grid-template: repeat(2, auto) / repeat(2, auto);
+  position: relative;
 }
 
-.place-self-grid {
-  grid-template: 100px 100px/150px 150px;
-  place-items: center stretch;
-  place-content: space-between space-around;
+.position-grid div:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  grid-column: 2/3;
 }
 
-.place-self-grid div:nth-child(even) {
-  place-self: stretch center;
+.position-relative-grid {
+  position: relative;
+  grid-template: repeat(2, 1fr 1fr) / 1fr 300px;
 }
 
-.min-max-grid {
-  grid-template-columns: 1fr max-content 1fr;
+.position-relative-grid div:nth-child(2) {
+  position: relative;
+  top: 100%;
+  grid-column: 1/2;
+}
+
+.position-fixed-grid {
+  grid-template: auto auto/1fr 1fr;
+}
+
+.position-fixed-grid div:nth-child(1) {
+  position: fixed;
+  top: 0;
+}
+
+.grid-container {
+  height: 100vh;
+  display: grid;
+  grid-template: 80px 1fr 80px /1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
 }
