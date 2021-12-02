@@ -1,0 +1,95 @@
+.d-grid {
+  display: grid;
+}
+
+.responsive-grid {
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 100px 1fr 100px;
+  grid-template-areas:
+    "logo header header header header-option header-option"
+    "nav content content content content content"
+    "footer footer footer footer footer footer";
+}
+
+.responsive-grid div:nth-child(1) {
+  grid-area: logo;
+}
+
+.responsive-grid div:nth-child(2) {
+  grid-area: header;
+}
+
+.responsive-grid div:nth-child(3) {
+  grid-area: header-option;
+}
+
+.responsive-grid div:nth-child(4) {
+  grid-area: nav;
+}
+
+.responsive-grid div:nth-child(5) {
+  grid-area: content;
+}
+
+.responsive-grid div:nth-child(6) {
+  grid-area: footer;
+}
+
+@media (max-width: 768px) {
+  .responsive-grid {
+    grid-template-rows: 80px auto auto 80px;
+    grid-template-areas:
+      "logo header-option header-option header header header"
+      "nav nav nav nav nav nav"
+      "content content content content content content"
+      "footer footer footer footer footer footer";
+  }
+}
+
+.grid-animation {
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "A B"
+    "C D";
+    animation: gridAnimation 5s infinite;
+}
+
+.grid-animation :nth-child(1) {
+  grid-area: A;
+}
+
+.grid-animation :nth-child(2) {
+  grid-area: B;
+}
+
+.grid-animation :nth-child(3) {
+  grid-area: C;
+}
+
+.grid-animation :nth-child(4) {
+  grid-area: D;
+}
+
+@keyframes gridAnimation {
+  0% {
+    grid-template-areas:
+      "A B"
+      "C D";
+  }
+  25% {
+    grid-template-areas:
+      "A C"
+      "B D";
+  }
+  50% {
+    grid-template-areas:
+      "A D"
+      "B C";
+  }
+  100% {
+    grid-template-areas:
+      "B A"
+      "D C";
+  }
+}

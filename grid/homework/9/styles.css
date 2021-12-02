@@ -1,0 +1,130 @@
+.d-grid {
+  display: grid;
+}
+
+body {
+  background-color: #50bee5;
+  padding: 20px;
+  font-size: 20px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  border: solid yellow;
+}
+
+.block {
+  padding: 20px;
+  border: solid #fff;
+}
+
+.red {
+  background-color: tomato;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.green {
+  background-color: green;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.darkblue {
+  background-color: darkblue;
+}
+
+.grid-layout-first {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 1fr 1fr 100px;
+  grid-template-areas:
+    "header header header"
+    "main-section main-section main-section"
+    "content-section content-section info-section"
+    "footer footer footer";
+  animation: animationTest 5s infinite;
+}
+
+.grid-layout-first div:nth-child(1) {
+  grid-area: header;
+}
+
+.grid-layout-first div:nth-child(2) {
+  grid-area: main-section;
+}
+
+.grid-layout-first div:nth-child(3) {
+  grid-area: content-section;
+}
+
+.grid-layout-first div:nth-child(4) {
+  grid-area: info-section;
+}
+
+.grid-layout-first div:nth-child(5) {
+  grid-area: footer;
+}
+
+@media (max-width: 768px) {
+  .grid-layout-first {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "header header"
+      "main-section main-section"
+      "content-section info-section"
+      "footer footer";
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-layout-first {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "header header"
+      "main-section main-section"
+      "content-section info-section"
+      "footer footer";
+  }
+}
+
+@keyframes animationTest {
+  50% {
+    grid-template-areas:
+      "header footer"
+      "main-section main-section"
+      "content-section info-section"
+      "footer header";
+  }
+}
+
+@media (max-width: 960px) {
+  @keyframes animationTest {
+    0% {
+      grid-template-areas:
+        "header footer"
+        "main-section main-section"
+        "content-section info-section"
+        "footer header";
+    }
+    100% {
+      grid-template-areas:
+        "footer footer"
+        "main-section main-section"
+        "content-section info-section"
+        "header header";
+    }
+  }
+}
+
+.grid-layout-second {
+  height: 300px;
+  grid-template-rows: 50px 1fr 50px;
+  margin: 50px;
+}
