@@ -47,12 +47,10 @@ body {
 
 .grid-layout-first {
   grid-template-columns: repeat(2, 50%);
-  grid-template-rows: repeat(2, 1fr);
 }
 
 .grid-layout-second {
   height: 300px;
-  grid-template-columns: repeat(2, 50%);
   grid-template-rows: 50px 1fr 50px;
 }
 
