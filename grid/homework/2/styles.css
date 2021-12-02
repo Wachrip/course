@@ -1,0 +1,61 @@
+.d-grid {
+  display: grid;
+}
+
+.d-grid-inline {
+  display: inline-grid;
+}
+
+body {
+  background-color: #50bee5;
+  padding: 20px;
+  font-size: 20px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  border: solid yellow;
+}
+
+.block {
+  padding: 20px;
+  border: solid #fff;
+}
+
+.red {
+  background-color: tomato;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.green {
+  background-color: green;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.darkblue {
+  background-color: darkblue;
+}
+
+.grid-layout-first {
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.grid-layout-second {
+  height: 300px;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 50px 1fr 50px;
+}
+
+.grid-layout-third {
+  grid-template-columns: repeat(5, auto);
+}
