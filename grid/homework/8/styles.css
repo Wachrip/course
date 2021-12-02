@@ -1,0 +1,92 @@
+.d-grid {
+  display: grid;
+}
+
+body {
+  background-color: #50bee5;
+  padding: 20px;
+  font-size: 20px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  border: solid yellow;
+}
+
+.block {
+  /* padding: 20px; */
+  border: solid #fff;
+}
+
+.pad {
+  padding: 20px;
+}
+
+.red {
+  background-color: tomato;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.green {
+  background-color: green;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.darkblue {
+  background-color: darkblue;
+}
+
+.grid-layout-first {
+  grid-template-columns: 150px 100px 150px;
+  grid-template-rows: 100px 200px;
+  grid-gap: 15px;
+}
+
+.test {
+  grid-template-rows: 50px 1fr 50px;
+}
+
+.test2 {
+  grid-template-columns: 50px auto 50px auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.px-col {
+  flex: 1 1 44px;
+}
+
+.fr-col {
+  flex: 1 1 1fr;
+}
+
+.px-row {
+  flex: 0 0 44px;
+}
+
+.fr-row {
+  flex: 1 1 auto;
+}
+
+.wrap-flex {
+  flex-wrap: wrap;
+}
